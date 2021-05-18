@@ -8,6 +8,12 @@
        path: /home/centos/web
        state: directory
 
+   - name: file is updated
+     copy:
+       dest: /home/centos/web/web.conf
+       content: My webapp config
+
+
 - name: update app servers
   hosts: app
 
@@ -16,5 +22,10 @@
      file:
        path: /home/centos/app
        state: directory
+   - name: file is updated
+     copy:
+       dest: /home/centos/app/app.conf
+       content: My app config
 
+   
 ...
